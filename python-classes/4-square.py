@@ -11,6 +11,7 @@ class Square:
     def size(self):
         return self.__size
 
+    @size.setter
     def __init__(self, size=0):
         """Initialize a square with a given size"""
         if type(size) is not int:
