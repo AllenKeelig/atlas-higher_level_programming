@@ -4,6 +4,12 @@
 
 class Square:
     """square class"""
+    def init(self, size=0):
+        self.size=size
+
+    @property
+    def size(self):
+        return self.__size
 
     def __init__(self, size=0):
         """Initialize a square with a given size"""
@@ -15,10 +21,5 @@ class Square:
             else:
                 self.__size = size
 
-    @property
-    def size(self):
-        return self.__size
-
-    @size.setter
     def area(self):
         return self.__size ** 2
