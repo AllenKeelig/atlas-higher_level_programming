@@ -4,4 +4,4 @@
 
 class Square:
     """square class"""
-    __size (int):
+    __size (int): size of a side of a square
