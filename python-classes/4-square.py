@@ -12,15 +12,15 @@ class Square:
         return (self.__size)
 
     @size.setter
-    def __init__(self, size=0):
+    def __init__(self, val):
         """Initialize a square with a given size"""
-        if type(size) is not int:
+        if type(val) is not int:
             raise TypeError("size must be an integer")
         else:
-            if size < 0:
+            if val < 0:
                 raise ValueError("size must be >= 0")
             else:
-                self.__size = size
+                self.__size = val
 
     def area(self):
         return self.__size ** 2
