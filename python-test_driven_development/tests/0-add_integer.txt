@@ -1,0 +1,9 @@
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+Checking float with int:
+	 >>> add_integer(2.1, 4)
+	 6
