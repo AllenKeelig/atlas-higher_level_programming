@@ -18,3 +18,7 @@ class TestMaxInteger(unittest.TestCase):
         """Tests for all positive with max in middle"""
         m = [2, 10, 8, 360, 14, 50]
         self.assertEqual(max_integer(m), 360)
+    def test_one_negative(self):
+        """Tests for list with one negative number"""
+        on = [200, 10, 8, -36, 14, 50]
+        self.assertEqual(max_integer(on), 200)
