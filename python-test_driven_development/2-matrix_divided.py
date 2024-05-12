@@ -10,8 +10,8 @@ def matrix_divided(matrix, div):
     Raises:
         TypeError: If either of a or b is a non-integer and non-float.
     """
-    if ((not isinstance(a, int) and not isinstance(a, float))):
+    if ((not isinstance(matrix, int) and not isinstance(matrix, float))):
         raise TypeError("a must be an integer")
-    if ((not isinstance(b, int) and not isinstance(b, float))):
+    if ((not isinstance(div, int) and not isinstance(div, float))):
         raise TypeError("b must be an integer")
-    return (int(a) / int(b))
+    return (int(matrix) / int(div))
