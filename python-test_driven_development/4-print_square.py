@@ -40,6 +40,7 @@ class Square:
         return self.__size ** 2
 
     def print_square(self):
+        """print_square Prints the square with the # character on stdout."""
         if self.__size == 0:
             print("")
             return
