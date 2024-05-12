@@ -1,51 +1,15 @@
 #!/usr/bin/python3
-"""Defines a class Square"""
+"""
+This is the "4-print_square" module.
+The 4-print_square  module supplies one function, print_square(size).
+"""
 
 
-class Square:
-    """square class"""
-    def __init__(self, size=0, position=(0, 0)):
-        self.size = size
-        self.position = position
-
-    @property
-    def size(self):
-        return self.__size
-
-    @size.setter
-    def size(self, val):
-        """Initialize a square with a given size"""
-        if type(val) is not int:
-            raise TypeError("size must be an integer")
-        else:
-            if val < 0:
-                raise ValueError("size must be >= 0")
-            else:
-                self.__size = val
-
-    @property
-    def position(self):
-        return self.__position
-
-    @position.setter
-    def position(self, value):
-        if type(value) is tuple and len(value) is 2 and \
-            type(value[0]) is int and type(value[1]) is int and \
-                value[0] >= 0 and value[1] >= 0:
-            self.__position = value
-        else:
-            raise TypeError("position must be a tuple of 2 positive integers")
-
-    def area(self):
-        return self.__size ** 2
-
-    def print_square(self):
-        """print_square Prints the square with the # character on stdout."""
-        if self.__size == 0:
-            print("")
-            return
-        [print("") for i in range(0, self.__position[1])]
-        for i in range(0, self.__size):
-            [print(" ", end="") for j in range(0, self.__position[0])]
-            [print("#", end="") for k in range(0, self.__size)]
-            print("")
+def print_square(size):
+    """prints a square with "#"'s that has a length of size """
+    if type(size) is not int:
+        raise TypeError("size must be an integer")
+    if size < 0:
+        raise ValueError("size must be >= 0")
+    if size > 0:
+        print(("#" * size + "\n") * size, end="")
