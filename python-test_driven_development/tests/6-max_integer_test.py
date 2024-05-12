@@ -14,3 +14,7 @@ class TestMaxInteger(unittest.TestCase):
         """Test a list with a beginning max value."""
         max_at_beginning = [4, 3, 2, 1]
         self.assertEqual(max_integer(max_at_beginning), 4)
+    def test_positive_middle(self):
+        """Tests for all positive with max in middle"""
+        m = [2, 10, 8, 360, 14, 50]
+        self.assertEqual(max_integer(m), 360)
