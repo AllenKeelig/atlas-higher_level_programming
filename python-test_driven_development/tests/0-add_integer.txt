@@ -21,3 +21,6 @@ Importing the function from the module:
     >>> add_integer(float('nan'))
     Traceback (most recent call last):
     ValueError: cannot convert float NaN to integer
+
+    >>> add_integer(2)
+    100
