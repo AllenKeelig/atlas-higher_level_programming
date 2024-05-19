@@ -1,1 +1,1 @@
-type
+atlas "everything is object" prokekct
