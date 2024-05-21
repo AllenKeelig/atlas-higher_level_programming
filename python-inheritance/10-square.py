@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Containssubclass Square
+Contains subclass Square that inherits from Rectangle
 """
 
 BaseGeometry = __import__('9-rectangle.py').Rectangle
