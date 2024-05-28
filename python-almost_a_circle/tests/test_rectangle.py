@@ -37,7 +37,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_rectangle_non_integer_parameters(self):
         with self.assertRaises(TypeError):
-            r6 = Rectangle("1", 2)
+            Rectangle("1", 2)
 
 if __name__ == '__main__':
     unittest.main()
