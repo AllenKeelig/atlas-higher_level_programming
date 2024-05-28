@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# models/base.py
 
 class Base:
     __nb_objects = 0
