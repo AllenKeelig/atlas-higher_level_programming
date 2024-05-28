@@ -1,59 +1,43 @@
-# models/rectangle.py
+# tests/test_rectangle.py
 
-from models.base import Base
+import unittest
+from models.rectangle import Rectangle
 
-class Rectangle(Base):
-    def __init__(self, width, height, x=0, y=0, id=None):
-        super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+class TestRectangle(unittest.TestCase):
+    def test_rectangle_init(self):
+        r1 = Rectangle(10, 20, 1, 2, 99)
+        self.assertEqual(r1.id, 99)
+        self.assertEqual(r1.width, 10)
+        self.assertEqual(r1.height, 20)
+        self.assertEqual(r1.x, 1)
+        self.assertEqual(r1.y, 2)
 
-    @property
-    def width(self):
-        return self.__width
+    def test_rectangle_default_id(self):
+        r2 = Rectangle(5, 10)
+        r3 = Rectangle(15, 20)
+        self.assertEqual(r2.id + 1, r3.id)
 
-    @width.setter
-    def width(self, value):
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
-        self.__width = value
+    def test_rectangle_getters_setters(self):
+        r4 = Rectangle(1, 2, 3, 4)
+        r4.width = 5
+        r4.height = 6
+        r4.x = 7
+        r4.y = 8
+        self.assertEqual(r4.width, 5)
+        self.assertEqual(r4.height, 6)
+        self.assertEqual(r4.x, 7)
+        self.assertEqual(r4.y, 8)
+    
+    def test_rectangle_minimal_parameters(self):
+        r5 = Rectangle(1, 2)
+        self.assertEqual(r5.width, 1)
+        self.assertEqual(r5.height, 2)
+        self.assertEqual(r5.x, 0)
+        self.assertEqual(r5.y, 0)
 
-    @property
-    def height(self):
-        return self.__height
+    def test_rectangle_non_integer_parameters(self):
+        with self.assertRaises(TypeError):
+            Rectangle("1", 2)
 
-    @height.setter
-    def height(self, value):
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        if value <= 0:
-            raise ValueError("height must be > 0")
-        self.__height = value
-
-    @property
-    def x(self):
-        return self.__x
-
-    @x.setter
-    def x(self, value):
-        if not isinstance(value, int):
-            raise TypeError("x must be an integer")
-        if value < 0:
-            raise ValueError("x must be >= 0")
-        self.__x = value
-
-    @property
-    def y(self):
-        return self.__y
-
-    @y.setter
-    def y(self, value):
-        if not isinstance(value, int):
-            raise TypeError("y must be an integer")
-        if value < 0:
-            raise ValueError("y must be >= 0")
-        self.__y = value
+if __name__ == '__main__':
+    unittest.main()
