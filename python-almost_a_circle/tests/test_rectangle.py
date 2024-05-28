@@ -1,5 +1,3 @@
-# tests/test_rectangle.py
-
 import unittest
 from models.rectangle import Rectangle
 
@@ -34,6 +32,38 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r5.height, 2)
         self.assertEqual(r5.x, 0)
         self.assertEqual(r5.y, 0)
+    
+    def test_invalid_width_type(self):
+        with self.assertRaises(TypeError):
+            Rectangle("1", 2)
+    
+    def test_invalid_height_type(self):
+        with self.assertRaises(TypeError):
+            Rectangle(1, "2")
+    
+    def test_invalid_x_type(self):
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, "3", 4)
+    
+    def test_invalid_y_type(self):
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, 3, "4")
+    
+    def test_invalid_width_value(self):
+        with self.assertRaises(ValueError):
+            Rectangle(0, 2)
+    
+    def test_invalid_height_value(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, -2)
+    
+    def test_invalid_x_value(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, -3, 4)
+    
+    def test_invalid_y_value(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, 3, -4)
 
 if __name__ == '__main__':
     unittest.main()
