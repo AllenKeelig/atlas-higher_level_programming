@@ -5,6 +5,7 @@ from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
     def test_rectangle_init(self):
+        r1 = Rectangle(1, 2_)
         r1 = Rectangle(10, 20, 1, 2, 99)
         self.assertEqual(r1.id, 99)
         self.assertEqual(r1.width, 10)
