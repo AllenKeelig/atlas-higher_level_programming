@@ -1,9 +1,17 @@
 #!/usr/bin/python3
+"""
+    contains class Rectangle which implements Base.
+"""
 rectangle.py
 
 from models.base import Base
 
 class Rectangle(Base):
+    """
+        class Rectangle implements Base.
+        Methods:
+            __init__()
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         self.width = width
