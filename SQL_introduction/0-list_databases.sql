@@ -1,2 +1,2 @@
-^-- what like this?
+-- what like this?
 SHOW DATABASES
