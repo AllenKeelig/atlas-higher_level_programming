@@ -1,1 +1,2 @@
-SHOW DATABASES;
+^-- what like this?
+SHOW DATABASES
